@@ -1,7 +1,7 @@
 module.exports = {
   // port for the server to listen on
   // on unix-like platforms, this can be the path to a unix socket
-  port: process.env.PORT || 9080,
+  port: process.env.PORT || 3000,
 
   // the unix permissions to use for unix sockets
   // set to -1 to disable permission changing
