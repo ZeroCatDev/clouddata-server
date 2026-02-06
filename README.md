@@ -24,9 +24,11 @@ docker compose up -d
 
 The server will be available at ws://localhost:9080/. Logs are persisted in the `./logs` directory on the host.
 
-Alternatively, you can pull the pre-built image from Docker Hub (replace `<username>` with the Docker Hub username where the image is published):
+Alternatively, if Docker Hub publishing is configured for this repository, you can pull the pre-built image:
 
 ```bash
+# Replace <username> with the actual Docker Hub username configured in the repository
+# Check the repository's GitHub Actions or ask the maintainer for the Docker Hub username
 docker pull <username>/cloud-server:latest
 docker run -d -p 9080:9080 <username>/cloud-server:latest
 ```

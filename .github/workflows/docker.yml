@@ -33,8 +33,9 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           # Image will be named cloud-server under your Docker Hub username
+          # Falls back to GitHub repository owner for local builds
           images: |
-            ${{ secrets.DOCKER_USERNAME || 'local' }}/cloud-server
+            ${{ secrets.DOCKER_USERNAME || github.repository_owner }}/cloud-server
           tags: |
             type=ref,event=branch
             type=ref,event=pr
