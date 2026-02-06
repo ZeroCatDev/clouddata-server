@@ -26,4 +26,4 @@ ENV PORT=9080
 ENV NODE_ENV=production
 
 # Start the server
-CMD ["npm", "start"]
+CMD ["node", "src/index.js"]
