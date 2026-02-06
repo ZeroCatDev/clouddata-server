@@ -24,7 +24,7 @@ docker compose up -d
 
 The server will be available at ws://localhost:9080/. Logs are persisted in the `./logs` directory on the host.
 
-Alternatively, you can pull the pre-built image from Docker Hub (if available):
+Alternatively, you can pull the pre-built image from Docker Hub (replace `<username>` with the Docker Hub username where the image is published):
 
 ```bash
 docker pull <username>/cloud-server:latest
@@ -132,4 +132,7 @@ To enable Docker Hub publishing, configure the following repository secrets:
 - `DOCKER_USERNAME`: Your Docker Hub username
 - `DOCKER_PASSWORD`: Your Docker Hub password or access token
 
-The workflow will build the Docker image on every push and only push to Docker Hub if the secrets are configured.
+And set this repository variable:
+- `DOCKER_ENABLED`: Set to `true` to enable Docker Hub publishing
+
+The workflow will build the Docker image on every push and only push to Docker Hub if the `DOCKER_ENABLED` variable is set to `true`.
