@@ -27,8 +27,12 @@ The server will be available at ws://localhost:9080/. Logs are persisted in the 
 Alternatively, if Docker Hub publishing is configured for this repository, you can pull the pre-built image:
 
 ```bash
-# Replace <username> with the actual Docker Hub username configured in the repository
-# Check the repository's GitHub Actions or ask the maintainer for the Docker Hub username
+# To find the Docker Hub username:
+# 1. Go to the repository's Actions tab on GitHub
+# 2. Look for successful "Docker Build" workflow runs
+# 3. Check the workflow logs for the image name being pushed
+# OR ask the repository maintainer for the Docker Hub username
+
 docker pull <username>/cloud-server:latest
 docker run -d -p 9080:9080 <username>/cloud-server:latest
 ```

@@ -37,8 +37,6 @@ jobs:
           images: |
             ${{ secrets.DOCKER_USERNAME || github.repository_owner }}/cloud-server
           tags: |
-            type=ref,event=branch
-            type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
             type=raw,value=latest,enable={{is_default_branch}}
