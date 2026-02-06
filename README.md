@@ -12,6 +12,40 @@ This server also does not implement history logs.
 
 ## Setup
 
+### Using Docker (Recommended)
+
+The easiest way to run cloud-server is using Docker and Docker Compose:
+
+```bash
+git clone https://github.com/Sunwuyuan/scratch-cloud-server
+cd scratch-cloud-server
+docker compose up -d
+```
+
+The server will be available at ws://localhost:9080/. Logs are persisted in the `./logs` directory on the host.
+
+To stop the server:
+
+```bash
+docker compose down
+```
+
+To view logs:
+
+```bash
+docker compose logs -f
+```
+
+#### Configuration with Docker
+
+You can configure the server by editing the environment variables in `docker-compose.yml`:
+
+- `PORT`: The port to listen on (default: 9080)
+- `TRUST_PROXY`: Set to `true` if using a reverse proxy (default: false)
+- `ANONYMIZE_ADDRESSES`: Set to `true` to anonymize IP addresses in logs (default: false)
+
+### Using Node.js
+
 Needs Node.js and npm.
 
 ```
